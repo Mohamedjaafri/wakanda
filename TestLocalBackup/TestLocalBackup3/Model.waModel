@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog>
+
+<dbInfo name="Model" uuid="DEB2380315EE8E47AF7052ECFC4FADBC"/>
+
+<extraProperties ____objectunic="true">
+
+	<relationCurve ____objectunic="true" run="true" mode="1"/>
+</extraProperties>
+
+<dataClasses name="Company" className="Company" collectionName="CompanyCollection" scope="public" uuid="4F940CCC6940EA4ABBF586B7856C91DC" tablePos="1">
+
+	<extraProperties ____objectunic="true" panelColor="#E5B9B7">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="160" Y="56"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="2BC47CAB76E220418CF657190D00FDCB" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="dateAjout" kind="storage" scope="public" uuid="5C46F201A9ED0940BF503766A1BAB475" fieldPos="3" type="date"/>
+
+	<attributes name="name" kind="storage" scope="public" uuid="5A16B2BECF6938469AB4582DF662827F" fieldPos="4" type="string"/>
+
+	<attributes name="complyeeCollection" scope="public" reversePath="true" path="company" type="ComplyeeCollection" kind="relatedEntities"/>
+
+</dataClasses>
+
+<dataClasses name="Emplyee" className="Employee" collectionName="ComplyeeCollection" scope="public" uuid="DE678093DC10B14FBE84E04FFA2393BC" tablePos="2">
+
+	<extraProperties ____objectunic="true" panelColor="#7F7F7F">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="582" Y="106"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="99DFF26AA8E7E8478B3DC3111BDF8FED" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="name" kind="storage" scope="public" uuid="D2C8087BF7AD8242BCB0F61241BD95AA" fieldPos="2" type="string"/>
+
+	<attributes name="company" scope="public" uuid="C9BDF312422A0F46A9177C405792D357" fieldPos="3" path="Company" type="Company" kind="relatedEntity"/>
+
+</dataClasses>
+
+<dataClasses name="People" className="People" collectionName="PeopleCollection" scope="public" uuid="47492686313C5D4B8649D4126956AAF5" tablePos="3">
+
+	<extraProperties ____objectunic="true" panelColor="#CCC1D9">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="377" Y="332"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="24809A7E97B721419B10A7204FED597C" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="name" kind="storage" scope="public" uuid="8A823D2A00B7FE459A1CB59055950DB1" fieldPos="2" type="string"/>
+
+	<attributes name="age" kind="storage" scope="public" uuid="BE8AB9E6EFF3D545885AD3D09CB7C4D4" fieldPos="3" type="number"/>
+
+	<attributes name="cbool" kind="storage" scope="public" uuid="7E6B47BB9D34BA4E9DE7536E9A5352D9" fieldPos="6" type="bool"/>
+
+	<attributes name="father" kind="relatedEntity" scope="public" type="People" uuid="9A6A5A836AB36E458EE2F7B308E7148D" fieldPos="4" path="People"/>
+
+	<attributes name="peopleCollection" kind="relatedEntities" scope="public" type="PeopleCollection" reversePath="true" path="father"/>
+
+	<attributes name="mother" kind="relatedEntity" scope="public" type="People" uuid="952C7E10B77DED47A09F55BC876B8393" fieldPos="5" path="People"/>
+
+	<attributes name="peopleCollection_1" kind="relatedEntities" scope="public" type="PeopleCollection" reversePath="true" path="mother"/>
+
+</dataClasses>
+</EntityModelCatalog>
